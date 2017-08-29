@@ -1,24 +1,7 @@
-import {assert} from 'chai'
-import Calc from '../index'
-import {Expenditure} from '../expenditure'
-
-const check = (expenditures: Expenditure[], expected: string) => {
-  const result = JSON.stringify(
-    new Calc().add(expenditures)
-              .calc()
-  )
-
-  assert.equal(result, expected)
-}
-
-const report = (expenditures: Expenditure[], expected: string) => {
-  const result = JSON.stringify(
-    new Calc().add(expenditures)
-              .report()
-  )
-
-  assert.equal(result, expected)
-}
+import {
+  check,
+  report
+} from './utils'
 
 describe('basic', () => {
   it('1 person', () => {
